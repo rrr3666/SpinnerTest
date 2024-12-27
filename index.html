@@ -357,6 +357,10 @@
         });
       };
       document.body.appendChild(unityLoader);
+        document.addEventListener("visibilitychange", function () {
+          if (!document.hidden) {
+            myGameInstance.SendMessage('Daemon', 'UpdateRemoteData');
+          }
     </script>
   </body>
 </html>
